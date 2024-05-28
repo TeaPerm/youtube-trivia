@@ -2,6 +2,10 @@ import { getRandomVideos } from "./controllers/youtube.js";
 import { getChannelId } from "./middlewares/youtubeMiddleware.js";
 import { config,app } from './config/config.js';
 
+app.get("/", async (req,res) => {
+  res.send("Hello World!")
+})
+
 app.get("/random-videos", async (req, res) => {
   try {
     const videos = await getRandomVideos();
@@ -24,3 +28,5 @@ app.get("/random-videos/:username",getChannelId,  async (req, res) => {
 app.listen(config.port, () => {
   console.log(`Server is running on http://localhost:${config.port}`);
 });
+
+export default app;
