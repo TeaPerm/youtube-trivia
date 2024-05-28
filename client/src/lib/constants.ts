@@ -1,4 +1,5 @@
-export const API_URL = "http://localhost:3000";
+// export const API_URL = "http://localhost:3000";
+export const API_URL = "https://youtube-trivia-api.vercel.app";
 
 export const counterDuration = 1000;
 export const circleDuration = 1000;

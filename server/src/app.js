@@ -6,6 +6,16 @@ app.get("/", async (req,res) => {
   res.send("Hello World!")
 })
 
+//CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  next();
+});
+
 app.get("/random-videos", async (req, res) => {
   try {
     const videos = await getRandomVideos();
